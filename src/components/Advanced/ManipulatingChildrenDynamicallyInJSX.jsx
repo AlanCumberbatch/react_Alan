@@ -34,9 +34,9 @@ const Row = ({ children, spacing }) => {
   return (
     <div className="Row">
       {/* {children} */}
-      {Children.map(children, (child, index) => {
+      {Children.map(children, (child, index) => {// React.Children.map: Manipulation children
         // return child;
-        return cloneElement(child, {
+        return cloneElement(child, {// React.cloneElement: Clones and returns a new element
           style: {
             ...child.props.style,
             ...(index > 0 ? childStyle : {})
