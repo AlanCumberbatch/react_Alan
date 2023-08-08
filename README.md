@@ -68,26 +68,9 @@ Lots of basic use case are included.
 
   然后添加到 index.css 中<br/>
   再在 tailwind.config.cjs 进行添加 -->
-  - add AntDesign
-    - npm install antd
-    - 在 index.js 或 index.tsx 文件的顶部添加以下代码： import 'antd/dist/antd.css';
-      - 关于这一步：
-        - // Less or Sass ??
 
-    - npm install --save-dev babel-plugin-import// below 配置按需加载（可选）
-    - 在项目根目录创建.babelrc文件，并添加以下配置：
-        ```js
-          {
-            "plugins": [
-              ["import", { "libraryName": "antd", "style": true }]
-            ]
-          }
-        ```
-    - usage:
-      ```js
-        // 111
-      ```
-
+-  React + React Router
+   -  [detail project link by my own](https://github.com/AlanCumberbatch/How-to-use/tree/master/use_react_router)
 
 ## Course Learned
 
@@ -98,45 +81,11 @@ Lots of basic use case are included.
 - [x] use Tailwind
 <!-- - [ ] use Framer Motion -->
 - [x] use heroicons
-- [ ] Using React+JS to create some common UI component;
+- [ ] Using React(JS)+Tailwind to create some common  UI component;
 - [x] use React Router
 - [ ] use Redux
 - [ ] custom React HOOK
-- [ ] use AntDesign
-- [ ] Read Great React Code and Create a few project. --- this is only for TS
 
-## Notes mainly for TS + React
-
-
--  React + Ant
-      ```js
-        // 按需加载Ant Design组件: 在React + TypeScript项目中，你可以使用babel-plugin-import插件来按需加载Ant Design组件。
-        // 首先，安装插件： npm install --save-dev babel-plugin-import
-        // 然后，在项目根目录创建.babelrc文件，并添加以下配置：
-        {
-          "plugins": [
-            ["import", { "libraryName": "antd", "style": true }]
-          ]
-        }
-        // 这将确保你只导入使用的Ant Design组件，并根据需要加载相应的样式。
-      ```
--  React + Three
-      ```js
-        // Install Three.js: npm install three
-        // Import Three.js:  import * as THREE from 'three';
-        // no need to extra configs, just do as ./scenes/reactThree/index.tsx
-      ```
-- React + webGL --- not OK
-      尝试图形学相关算法，并最终作用于项目中 ---》 Three Project/ UE
-      ```js
-        // npm install webgl-typescript  / npm install --save @types/webgl2, npm install --save webgl2
-      ```
--  React + webGPU --- not try
--  React + React Router
-    ```js
-      // - Install React Router:  npm install react-router-dom
-      // reference link: https://reactrouter.com/en/main/start/tutorial#client-side-routing [里面的import { getContacts } from "../contacts"; 我非常疑惑，哪里来的？？？--明天看看是否能找到源码]
-    ```
 ## Tips：
 
 ### 关于 vite启动之后不能通过ip访问项目的问题

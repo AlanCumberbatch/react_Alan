@@ -23,8 +23,8 @@ function BasicReact() {
 
   return (
     <>
-       {/* Props 传值 + 通过事件在 组件内部更改 Props 的值 + useState 的使用 */}
-       <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'grey' }}>
+        {/* Props 传值 + 通过事件在 组件内部更改 Props 的值 + useState 的使用 */}
+        <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'grey' }}>
           <div style={{ width: '35%', borderRight:'1px solid black',marginRight:'15px' }}>
             <div>Props 传值</div>
             <div>通过事件在 组件内部更改 Props 的值</div>
