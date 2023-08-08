@@ -64,10 +64,30 @@ Lots of basic use case are included.
   ```
   在 tailwind.config.cjs 添加配置,具体可参考[这个链接](https://tailwindcss.com/docs/theme)
 
-- 添加字体： Google Fonts
+<!-- - 添加字体： Google Fonts
 
   然后添加到 index.css 中<br/>
-  再在 tailwind.config.cjs 进行添加
+  再在 tailwind.config.cjs 进行添加 -->
+  - add AntDesign
+    - npm install antd
+    - 在 index.js 或 index.tsx 文件的顶部添加以下代码： import 'antd/dist/antd.css';
+      - 关于这一步：
+        - // Less or Sass ??
+
+    - npm install --save-dev babel-plugin-import// below 配置按需加载（可选）
+    - 在项目根目录创建.babelrc文件，并添加以下配置：
+        ```js
+          {
+            "plugins": [
+              ["import", { "libraryName": "antd", "style": true }]
+            ]
+          }
+        ```
+    - usage:
+      ```js
+        // 111
+      ```
+
 
 ## Course Learned
 
@@ -117,3 +137,29 @@ Lots of basic use case are included.
       // - Install React Router:  npm install react-router-dom
       // reference link: https://reactrouter.com/en/main/start/tutorial#client-side-routing [里面的import { getContacts } from "../contacts"; 我非常疑惑，哪里来的？？？--明天看看是否能找到源码]
     ```
+## Tips：
+
+### 关于 vite启动之后不能通过ip访问项目的问题
+
+  - [reference link --- 局域网内可访问](https://www.jianshu.com/p/ee286a5e7a67)
+
+     - 具体内容：
+
+       ```js
+         // 要修改vite.config.js文件, 添加 host: 0.0.0.0
+         server: {
+           open: true,
+           port: 3005,
+           host: '0.0.0.0'
+         },
+         // 修改 package.json 启动命令
+         "scripts": {
+           "dev": "vite",
+           "start": "vite --host 0.0.0.0", // 这一条
+           "build": "vue-tsc --noEmit && vite build",
+           "serve": "vite preview"
+         },
+       ```
+  - 在公网上可访问： npm install ngrok -g
+    -  在终端中： “ ngrok http 3000 ” //注意： 端口号要和当前项目的一致
+    -  同时，基于Vite的项目在启动时需要使用： “vite --host 0.0.0.0”, 来让 Vite 服务器监听所有可用的 IP 地址

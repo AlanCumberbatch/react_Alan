@@ -13,5 +13,10 @@ export default defineConfig({
     coverage: {
       reporter: ['text', 'json', 'html'],
     }
-  }
+  },
+  server: {
+    open: true,
+    port: 5173,
+    host: '0.0.0.0'
+  },
 })
