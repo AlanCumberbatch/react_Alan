@@ -1,5 +1,5 @@
-import RandomImg from "./forReactDemo/RandomImg"
-import LanguageTextarea from "./forReactDemo/LanguageTextarea"
+import RandomImg from "./RandomImg"
+import LanguageTextarea from "./LanguageTextarea"
 import { useState } from "react";
 
 function ReactDemo() {

@@ -81,10 +81,10 @@ Lots of basic use case are included.
 - [x] use Tailwind
 <!-- - [ ] use Framer Motion -->
 - [x] use heroicons
-- [ ] Using React(JS)+Tailwind to create some common  UI component;
+- [x] Using React(JS)+Tailwind to create some common  UI component-- all in /src/UIComponent
 - [x] use React Router
+- [x] custom React HOOK
 - [ ] use Redux
-- [ ] custom React HOOK
 
 ## Tips：
 

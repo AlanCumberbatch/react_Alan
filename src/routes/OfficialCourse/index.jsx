@@ -35,16 +35,19 @@ import AdvancedReact from './AdvancedReact';
 import BasicReact from './BasicReact';
 import { useState } from "react"
 
+import useCounter from '../../customHook/useCounter';// custom HOOK
+
 
 function OfficialCourse() {
-  const [count, setCount] = useState(0);
+  const { count, increment, decrement } = useCounter(0);// custom HOOK
+  const [count_, setCount] = useState(0);
   const data = new Date();
 
   const onClick = () => {
     console.log("Clicked");
   };
   const onBtnClick = () => {
-    console.log("count:",count);
+    console.log("count:",count_);
   };
 
   return (
@@ -57,7 +60,7 @@ function OfficialCourse() {
             <div>通过事件在 组件内部更改 Props 的值</div>
             <div>useState 的使用</div>
           </div>
-          <Heading count={count} title="Heading_title" onClick={()=>{setCount(count+1);}}/>
+          <Heading count={count_} title="Heading_title" onClick={()=>{setCount(count_+1);}}/>
         </div>
         {/* 通过Props传值给 ul list */}
         <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'pink' }}>
@@ -83,7 +86,7 @@ function OfficialCourse() {
             <div>通过事件在 组件内部更改 Props 的值</div>
             <div>更改 Props 的值后数据共享</div>
           </div>
-          <Events number={count} addClick={()=>setCount(count+1)} onClick={onBtnClick} >Get count value</Events>
+          <Events number={count_} addClick={()=>setCount(count_+1)} onClick={onBtnClick} >Get count value</Events>
         </div>
         {/* Toggle: 根据传入的参数渲染不同的JSX */}
         <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'grey' }}>
@@ -272,6 +275,99 @@ function OfficialCourse() {
             </div>
           </div>
         </div>
+
+        {/* React.Context */}
+        {/* when a certain type of date is very needed by many component within a app (Globe State), using props is not always efficitive  ---> Context */}
+        {/* Context---deal with----Props drilling problem(mentioned above) */}
+        {/* Recommend: props and state is better, date would be easy to follow in this way. */}
+        <div style={{width:'100vw',backgroundColor:'pink' }}>
+          {/* <div style={{ width: '45%', borderRight:'1px solid black',marginRight:'15px' }}>
+            <div>React.Context</div>
+            <div>when a certain type of date is very needed by many component within a app (Globe State), using props is not always efficitive  ---》 Context </div>
+            <div>Context---deal with----Props drilling problem(mentioned above) </div>
+            <div>Recommend: props and state is better, date would be easy to follow in this way.</div>
+          </div>
+          <div style={{ backgroundColor: 'lightblue' }}> <Context /></div> */}
+
+          <div style={{ border: '1px solid black',display:'flex', alignItems:'center'}}>
+            <div style={{ width: '15%', borderRight:'1px solid black',marginRight:'15px', fontSize:'20px' }}>
+            <div>React.Context</div>
+            </div>
+            <div style={{ backgroundColor: 'lightblue' }}> <Context /></div>
+          </div>
+          <div style={{ border: '1px solid black',display:'flex', alignItems:'center',color:'blue', }}>
+            <div style={{ width: '10%', borderRight:'1px solid black',marginRight:'15px', fontSize:'20px' }}>
+              NOTE
+            </div>
+            <div style={{textAlign:'start'}}>
+              <div>when a certain type of date is very needed by many component within a app (Globe State), using props is not always efficitive  ---》 Context </div>
+              <div>Context---deal with----Props drilling problem(mentioned above) </div>
+              <div>Recommend: props and state is better, date would be easy to follow in this way.</div>
+            </div>
+          </div>
+        </div>
+
+        {/* React HOOKs */}
+        <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'grey', boxSizing:'border-box' }}>
+          <div style={{ width: '15%', borderRight:'1px solid black',marginRight:'15px', fontSize:'20px' }}>
+            <div>React HOOKs</div>
+          </div>
+          {/* <div style={{backgroundColor:'lightblue'}}> <HOOK /></div> */}
+          <div style={{border:'1px solid black', margin:'5px'}}> <HOOK /></div>
+        </div>
+
+        {/* Things to need to know before fetching data */}
+        <FetchDemo />
+
+        {/* Think useReducer as a super powered useState */}
+        <UseReducer2useState />
+
+        {/* ref Hook */}
+        <RefHook />
+
+        {/* react hooks and custom hooks */}
+        {/* custom hooks: a collection of react hooks to do certain things */}
+
+
+        {/*
+          JSX --> Elements [Plain JavaScript Objects] & Component [Functions]
+          --> the use of children prop: Containment & Specialization
+          --> manipulating children dynamically: React.cloneElement & React.children
+          --> Spread operator (...): Enables copying and merging
+          --> To reuse common behavior: Crossing-cutting concerns
+              --> Higher-order component: Enables powerful abstraction. Just a function takes a component and return a new component
+              --> Render props: Special props; New props injected as function parameters dynamically
+
+          React Testing Library --Jest
+        */}
+        {/* ComponentCompositionWithChildren */}
+        <ComponentCompositionWithChildren />
+        {/* ManipulatingChildrenDynamicallyInJSX */}
+        <ManipulatingChildrenDynamicallyInJSX />
+        {/* SpreadAttributes */}
+        <SpreadAttributes />
+        {/* CrossCuttingConcerns */}
+        <CrossCuttingConcerns />
+        {/* RenderProps */}
+        <RenderProps />
+        {/* TestingLibraryAndJest */}
+        {/* <TestingLibraryAndJest/> */}
+
+        {/* Course recap */}
+        {/*
+
+        */}
+
+        {/* use custom Hook */}
+        <div className="bg-grey-500 border-2 pb-[10px]">
+          <h2>Custom HOOK</h2>
+          <div >
+            <p>Count: {count}</p>
+            <button className="w-[90px] h-[26px] bg-black-500 rounded-md mr-[5px]" onClick={increment}>Increment</button>
+            <button className="w-[90px] h-[26px] bg-black-500 rounded-md mr-[5px]" onClick={decrement}>Decrement</button>
+          </div>
+        </div>
+
       </div>
     </>
   )
