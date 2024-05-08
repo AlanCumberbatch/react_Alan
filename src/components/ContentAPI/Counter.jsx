@@ -1,4 +1,5 @@
 import { useMealsListContext } from "./MealsProvider";
+import MealsProvider from "./MealsProvider";
 
 /*
   当我们在React应用中需要在多个组件之间共享数据时，可以使用React Context Provider。
@@ -6,9 +7,16 @@ import { useMealsListContext } from "./MealsProvider";
 */
 const Counter = () => {
   const { meals } = useMealsListContext();
+  console.log("MealsProvider.Consumer", MealsProvider.Consumer);// undefined
   return (
     <div style={{backgroundColor:'blue'}}>
       <h3>Number of meals today: {meals.length}</h3>
+      {/* <MealsProvider.Consumer>
+        {theme => (
+          <button className={theme} />
+        )}
+        React.js
+      </MealsProvider.Consumer> */}
     </div>
   );
 }

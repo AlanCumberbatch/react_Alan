@@ -14,6 +14,7 @@ function ReactDemo() {
       {/* <h2>R Demo</h2> */}
       <div className="bg-slate-100 border-2 border-solid xs:w-2/5 w-full xs:h-full h-1/2">
         {/* Image --- show a random image */}
+        JavaScript HTMl CSS
         {/* <img srcSet="@/assets/desmos.jpeg" alt="" srcset="" /> */}
         <RandomImg imageUrl={imageUrl} setImageUrl={setImageUrl} />
       </div>

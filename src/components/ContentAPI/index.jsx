@@ -8,6 +8,9 @@ function ContentAPI() {
       <MealsProvider>
         <MealsList/>
         <Counter/>
+        {/* <MealsProvider.Consumer>
+          {value => <div>11</div> }
+        </MealsProvider.Consumer> */}
       </MealsProvider>
     </>
   )

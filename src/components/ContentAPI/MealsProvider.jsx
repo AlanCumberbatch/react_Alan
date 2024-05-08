@@ -13,6 +13,6 @@ const MealsProvider = ({children}) => {
   )
 }
 
-export const useMealsListContext = () => useContext(MealsContext);
+export const useMealsListContext = () => useContext(MealsContext);// Whats this for ? --> to avoiding props drilling(passing props through multiple layers and components) and making global states or values accessible to components deep in the component tree
 
 export default MealsProvider;

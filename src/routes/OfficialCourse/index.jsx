@@ -2,6 +2,7 @@ import DropDowns from "../../UIComponent/DropDowns"
 import SideBar from "../../UIComponent/SideBar"
 
 
+import AllInOne from '../../components/AllInOne'
 import Heading from '../../components/Heading'
 import Props2 from '../../components/Props2'
 import Events from '../../components/Events'
@@ -53,6 +54,15 @@ function OfficialCourse() {
   return (
     <>
       <div className=" w-screen h-screen pt-[32px] bg-grey-500">
+
+        {/* 对在一个里面 */}
+        <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'grey' }}>
+          <div style={{ width: '35%', borderRight:'1px solid black',marginRight:'15px' }}>
+            <div>AllInOne</div>
+          </div>
+          <br />
+          <AllInOne count={count_} title="Heading_title" onClick={()=>{setCount(count_+1);}}/>
+        </div>
         {/* Props 传值 + 通过事件在 组件内部更改 Props 的值 + useState 的使用 */}
         <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'grey' }}>
           <div style={{ width: '35%', borderRight:'1px solid black',marginRight:'15px' }}>
@@ -60,7 +70,9 @@ function OfficialCourse() {
             <div>通过事件在 组件内部更改 Props 的值</div>
             <div>useState 的使用</div>
           </div>
+          <br/>
           <Heading count={count_} title="Heading_title" onClick={()=>{setCount(count_+1);}}/>
+          {/* <Heading count={count_} title="Heading_title" onClick={function () { setCount(count_ + 1) }} /> OK */}
         </div>
         {/* 通过Props传值给 ul list */}
         <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'pink' }}>
@@ -83,8 +95,7 @@ function OfficialCourse() {
         {/* 更改 Props 的值后数据共享 */}
         <div style={{width:'100vw', display:'flex', alignItems:'center', backgroundColor:'pink', paddingTop:'5px', paddingBottom:'5px' }}>
           <div style={{ width: '35%', borderRight:'1px solid black',marginRight:'15px' }}>
-            <div>通过事件在 组件内部更改 Props 的值</div>
-            <div>更改 Props 的值后数据共享</div>
+            <div> 更改 Props 的值后数据共享 （state lit up）</div>
           </div>
           <Events number={count_} addClick={()=>setCount(count_+1)} onClick={onBtnClick} >Get count value</Events>
         </div>
@@ -122,17 +133,17 @@ function OfficialCourse() {
             </div>
             <div></div>
           </div>
-          {/* A. state lit up/类比找最大公约数，或者是找最下公倍数 */}
+          {/* A. state lit up/类比找最大公约数，或者是找最小公倍数 */}
           <div style={{ border: '1px solid black',display:'flex', alignItems:'center' }}>
             <div style={{ width: '35%', borderRight:'1px solid black',marginRight:'15px' }}>
                 <span style={{fontWeight:'800'}}>A.</span> state lit up/类比找最大公约数，或者是找最下公倍数
             </div>
             <div>used as before</div>
           </div>
-          {/* B. Context API：一组数据在一些components上共享？  ---- //TODO [待]HOW it works? */}
+          {/* B. Context API：making global states and values accessible to components deep in component tree, avoiding props drilling  ---- */}
           <div style={{ border: '1px solid black',display:'flex', alignItems:'center' }}>
             <div style={{ width: '35%', borderRight:'1px solid black',marginRight:'15px' }}>
-                <span style={{fontWeight:'800'}}>B.</span> Context API：一组数据在一些components上共享？
+                <span style={{fontWeight:'800'}}>B.</span> Context API：making global states and values accessible to components deep in component tree, avoiding props drilling
             </div>
             <div>
               <ContentAPI />

@@ -3,6 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "React learning Project",
+  "keywords": [
+    "react",
+    "courseraReact"
+  ],
+  "homepage": "https://github.com/AlanCumberbatch/react_Alan/blob/main/README.md",
   "scripts": {
     "devIP": "vite --host 0.0.0.0",
     "dev": "vite",

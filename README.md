@@ -112,3 +112,4 @@ Lots of basic use case are included.
   - 在公网上可访问： npm install ngrok -g
     -  在终端中： “ ngrok http 3000 ” //注意： 端口号要和当前项目的一致
     -  同时，基于Vite的项目在启动时需要使用： “vite --host 0.0.0.0”, 来让 Vite 服务器监听所有可用的 IP 地址
+    -  具体链接：Forwarding对应的link

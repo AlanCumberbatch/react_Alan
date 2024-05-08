@@ -8,9 +8,12 @@ export default {
     extend: {
       colors: {
         "blue-500":"#3B82F6",
+        "blue-300":"#3B82E0",
         "black-500":"#3F3F46",
         "grey-500":"#A1A1AA",
         "white":"#FFFFFF",
+        "paperWhite":"#FFFFF0",
+        "black":"#000",
       },
       flexBasis: {// no use
         '1/7': '14.2857143%',
