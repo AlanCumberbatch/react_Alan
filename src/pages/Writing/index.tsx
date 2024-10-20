@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+// import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi'; // 引入图标
 import { motion } from 'framer-motion';
@@ -42,7 +43,7 @@ const Writing = () => {
   };
 
   // 实时更新div的宽度
-  const divRef = useRef<HTMLDivElement[]>([]); // 用于存储所有子路由div的引 d
+  const divRef = useRef<(HTMLDivElement | null)[]>([]); // 用于存储所有子路由div的引 d
   const [divWidth, setDivWidth] = useState<number>(0);
   const parentRef = useRef<HTMLDivElement | null>(null); // 存储父级容器的引用
   const [parentWidth, setParentWidth] = useState<number>(0);

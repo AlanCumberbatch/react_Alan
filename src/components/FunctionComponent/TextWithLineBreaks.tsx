@@ -1,6 +1,12 @@
 import React from 'react'
 
-const TextWithLineBreaks = ({rawText}) => {
+interface TextWithLineBreaksProps {
+  rawText: string; // 明确指定 rawText 的类型为字符串
+}
+
+const TextWithLineBreaks: React.FC<TextWithLineBreaksProps> = ({ rawText}) => {
+
+  // if (!rawText) return null;
 
   // 替换文本中的换行符为 <br> 标签
   // const formattedText = rawText.replace(/\n/g, '<br>');

@@ -1,7 +1,8 @@
 
-import React from 'react';
+// import React from 'react';
 // import DemoPage from "./DemoPage"
-import { Routes, Route,Link } from 'react-router-dom';
+// import { Routes, Route,Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar'; // 导航栏
 // import Home from './pages/Home'; // 首页组件
 // // import About from './pages/About'; // 关于页组件
