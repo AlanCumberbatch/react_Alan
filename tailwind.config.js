@@ -1,34 +1,58 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // mode: 'jit',
+  // purge: ['./src/**/*.{tsx}'], // 修改为你的路径
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  colors: {
+    'blue': '#1fb6ff',
+    'purple': '#7e5bef',
+    'pink': '#ff49db',
+    'orange': '#ff7849',
+    'green': '#13ce66',
+    'yellow': '#ffc82c',
+    'gray-dark': '#273444',
+    'gray-20': '#F8F4EB',
+    'gray-25': '#EFE6E6',
+    'gray': '#8492a6',
+    'gray-light': '#d3dce6',
+  },
   theme: {
     extend: {
       colors: {
-        "blue-500":"#3B82F6",
-        "blue-300":"#3B82E0",
-        "black-500":"#3F3F46",
-        "grey-500":"#A1A1AA",
-        "white":"#FFFFFF",
-        "paperWhite":"#FFFFF0",
-        "black":"#000",
+        'gray-20': '#F8F4EB',
+        'gray-25': '#EFE6E6',
       },
-      flexBasis: {// no use
-        '1/7': '14.2857143%',
-        '2/7': '28.5714286%',
-        '3/7': '42.8571429%',
-        '4/7': '57.1428571%',
-        '5/7': '71.4285714%',
-        '6/7': '85.7142857%',
+      backgroundImage: (theme)=> ({
+        "gradient-yellowed": "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
+        "mobile-home":"url(./assets/HomePageGraphic.png)"
+      }),
+      fontFamily: {
+        dmsans: ["DM Sans", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+      content: {// for ::before, ::after,
+        evolvetext: "url(./assets/Evolvetext.png)",
+      },
+      keyframes: {
+        gradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      },
+      animation: {
+        'gradient-bg': 'gradient 6s ease infinite', // 动态渐变动画
       },
     },
-    screens: {
-      xs: "480px",
-      sm: "768px",
-      md:"1060px"
-    }
+  },
+  screens: {
+    sm: '480px',
+    md: '768px',
+    lg: '976px',
+    xl: '1440px',
   },
   plugins: [],
 }
